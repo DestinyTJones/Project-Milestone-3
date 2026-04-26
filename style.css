@@ -1,11 +1,15 @@
+/* Base styles */
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
+  background: #f4f4f4;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   background: #333;
@@ -13,34 +17,96 @@ nav ul {
 
 nav ul li a {
   color: white;
-  padding: 10px;
+  padding: 12px;
   display: block;
   text-decoration: none;
+  transition: background 0.3s;
 }
 
+nav ul li a:hover {
+  background: #555;
+}
+
+/* Main container (card style) */
 .container {
   padding: 20px;
+  margin: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Headings */
+h1, h2 {
+  color: #333;
+}
+
+/* Images */
 img {
   max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 10px;
 }
 
+/* Tables */
 table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
   display: block;
   overflow-x: auto;
 }
 
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #eee;
+}
+
+/* Forms (Quiz) */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, button {
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+button {
+  background: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* Tablet */
 @media (min-width: 768px) {
   nav ul {
     flex-direction: row;
+    justify-content: center;
+  }
+
+  .container {
+    margin: 30px auto;
+    max-width: 800px;
   }
 }
 
+/* Desktop */
 @media (min-width: 1024px) {
   .container {
     max-width: 1000px;
-    margin: auto;
   }
 }
