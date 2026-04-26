@@ -24,55 +24,60 @@
 
   <form id="quizForm">
 
-    <!-- Question 1 -->
-    <label>1. What is responsive web design?</label>
-    <input type="text" id="q1">
+    <fieldset>
+      <legend>Answer all questions</legend>
 
-    <!-- Question 2 -->
-    <label>2. What are media queries used for?</label>
-    <input type="text" id="q2">
+      <!-- Q1 -->
+      <label for="q1">1. What is responsive web design?</label>
+      <input type="text" id="q1" placeholder="e.g., adapts to screen size" required>
 
-    <!-- Question 3 -->
-    <label>3. Which approach starts with small screens first?</label>
-    <select id="q3">
-      <option value="">Select</option>
-      <option value="mobile">Mobile-first</option>
-      <option value="desktop">Desktop-first</option>
-    </select>
+      <!-- Q2 -->
+      <label for="q2">2. What are media queries used for?</label>
+      <input type="text" id="q2" placeholder="e.g., screen size styling" required>
 
-    <!-- Question 4 -->
-    <label>4. What unit helps layouts scale (%, px, or fixed)?</label>
-    <input type="text" id="q4">
+      <!-- Q3 -->
+      <label for="q3">3. Which approach starts with small screens first?</label>
+      <select id="q3" required>
+        <option value="">Select</option>
+        <option value="mobile">Mobile-first</option>
+        <option value="desktop">Desktop-first</option>
+      </select>
 
-    <!-- Question 5 -->
-    <label>5. What CSS feature changes layout based on screen size?</label>
-    <input type="text" id="q5">
+      <!-- Q4 -->
+      <label for="q4">4. What unit helps layouts scale (%, px, or fixed)?</label>
+      <input type="text" id="q4" placeholder="e.g., %" required>
 
-    <!-- Question 6 -->
-    <label>6. Why is responsive design important?</label>
-    <input type="text" id="q6">
+      <!-- Q5 -->
+      <label for="q5">5. What CSS feature changes layout based on screen size?</label>
+      <input type="text" id="q5" placeholder="e.g., media queries" required>
 
-    <!-- Question 7 -->
-    <label>7. What does max-width: 100% do to images?</label>
-    <input type="text" id="q7">
+      <!-- Q6 -->
+      <label for="q6">6. Why is responsive design important?</label>
+      <input type="text" id="q6" placeholder="e.g., better user experience" required>
 
-    <!-- Question 8 -->
-    <label>8. Which device typically has the smallest screen?</label>
-    <select id="q8">
-      <option value="">Select</option>
-      <option value="phone">Phone</option>
-      <option value="desktop">Desktop</option>
-    </select>
+      <!-- Q7 -->
+      <label for="q7">7. What does max-width: 100% do to images?</label>
+      <input type="text" id="q7" placeholder="e.g., scales image" required>
 
-    <!-- Question 9 -->
-    <label>9. What layout system is commonly used for responsiveness?</label>
-    <input type="text" id="q9">
+      <!-- Q8 -->
+      <label for="q8">8. Which device typically has the smallest screen?</label>
+      <select id="q8" required>
+        <option value="">Select</option>
+        <option value="phone">Phone</option>
+        <option value="desktop">Desktop</option>
+      </select>
 
-    <!-- Question 10 -->
-    <label>10. What is the purpose of flexible layouts?</label>
-    <input type="text" id="q10">
+      <!-- Q9 -->
+      <label for="q9">9. What layout system is commonly used for responsiveness?</label>
+      <input type="text" id="q9" placeholder="e.g., flexbox or grid" required>
 
-    <button type="button" onclick="checkAnswer()">Submit</button>
+      <!-- Q10 -->
+      <label for="q10">10. What is the purpose of flexible layouts?</label>
+      <input type="text" id="q10" placeholder="e.g., adapt to screens" required>
+
+      <button type="button" onclick="checkAnswer()">Submit</button>
+
+    </fieldset>
 
   </form>
 
