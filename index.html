@@ -8,19 +8,26 @@
 <meta charset="UTF-8">
 <!-- Ensures proper character encoding -->
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Enables responsive behavior on mobile devices -->
+
 <title>Home</title>
 <!-- Title displayed in browser tab -->
 
 <link rel="stylesheet" href="style.css">
 <!-- Links external CSS stylesheet -->
 </head>
+
 <body>
 
 <!-- Navigation bar (used across all pages for consistency) -->
 <nav>
   <ul>
     <!-- Navigation links -->
-    <li><a href="index.html">Home</a></li>
+    
+    <!-- 'active' class highlights current page -->
+    <li><a href="index.html" class="active">Home</a></li>
+    
     <li><a href="concepts.html">Concepts</a></li>
     <li><a href="content1.html">Content 1</a></li>
     <li><a href="content2.html">Content 2</a></li>
@@ -31,7 +38,8 @@
 </nav>
 
 <!-- Main content container -->
-<div class="container">
+<main class="container">
+<!-- Using <main> improves semantic structure and accessibility -->
 
   <!-- Page title -->
   <h1>Responsive Web Design</h1>
@@ -69,7 +77,9 @@
   <!-- Image demonstrating responsive design -->
   <img 
     src="https://img.freepik.com/free-vector/flat-design-responsive-website-design_23-2149483806.jpg?semt=ais_hybrid&w=740&q=80" 
-    alt="Illustration of responsive web design across devices">
+    alt="Illustration of responsive web design across devices"
+    style="max-width: 100%; height: auto;">
+    <!-- Ensures image scales properly on all screen sizes -->
 
   <!-- Closing paragraph -->
   <p>
@@ -78,7 +88,7 @@
     essential for creating effective and modern websites.
   </p>
 
-</div>
+</main>
 
 <!-- Links external JavaScript file (if used for interactivity) -->
 <script src="script.js"></script>
