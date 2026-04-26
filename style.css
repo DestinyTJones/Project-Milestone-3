@@ -11,6 +11,7 @@ body {
   background: #f4f6f9;
   color: #333;
   line-height: 1.6;
+  margin: 0;
 }
 
 /* Navigation */
@@ -34,30 +35,37 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-/* Hover + active feel */
 nav ul li a:hover {
   background: #3b82f6;
   padding-left: 18px;
 }
 
-/* ⭐ HERO SECTION (THIS FIXES YOUR ALIGNMENT ISSUE) */
+/* ⭐ HERO SECTION (FIXED) */
 .hero {
   text-align: center;
-  padding: 50px 20px;
+  padding: 60px 20px;
   background: linear-gradient(to right, #3b82f6, #2563eb);
   color: white;
+
+  /* center content vertically + horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 36px;
   margin-bottom: 10px;
+  color: white; /* override global */
 }
 
 .hero p {
   font-size: 18px;
+  color: #e5e7eb;
 }
 
-/* Container (card style) */
+/* Container */
 .container {
   padding: 25px;
   margin: 20px;
