@@ -1,19 +1,34 @@
 <!DOCTYPE html>
+<!-- Declares this document as HTML5 -->
+
 <html lang="en">
+<!-- Sets the language of the page to English -->
+
 <head>
 <meta charset="UTF-8">
+<!-- Ensures proper text encoding -->
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Enables responsive behavior on mobile devices -->
+
 <title>Concepts</title>
+<!-- Title shown in browser tab -->
+
 <link rel="stylesheet" href="style.css">
+<!-- Links external CSS stylesheet -->
 </head>
 
 <body>
 
-<!-- ✅ FIX: match your CSS (remove unused classes) -->
+<!-- Navigation bar for all site pages -->
 <nav>
   <ul>
+    <!-- Navigation links -->
     <li><a href="index.html">Home</a></li>
+    
+    <!-- 'active' class highlights current page -->
     <li><a href="concepts.html" class="active">Concepts</a></li>
+    
     <li><a href="content1.html">Content 1</a></li>
     <li><a href="content2.html">Content 2</a></li>
     <li><a href="quiz.html">Quiz</a></li>
@@ -22,13 +37,16 @@
   </ul>
 </nav>
 
+<!-- Hero section: introduces the page topic -->
 <header class="hero">
   <h1>Key Concepts of Responsive Design</h1>
   <p>Understanding how modern websites adapt to different devices and screen sizes</p>
 </header>
 
+<!-- Main content container -->
 <main class="container">
 
+  <!-- Overview section explaining the topic -->
   <section class="card">
     <h2>Overview</h2>
     <p>
@@ -37,12 +55,14 @@
     </p>
   </section>
 
-  <!-- ✅ Example Layout REMOVED -->
-
+  <!-- Core concepts section -->
   <section class="card">
     <h2>Core Concepts</h2>
 
+    <!-- Grid layout for displaying features -->
     <div class="grid">
+      
+      <!-- Individual concept block -->
       <div class="feature">
         <h3>Responsive Design</h3>
         <p>Layouts automatically adjust to fit different screen sizes.</p>
@@ -57,28 +77,38 @@
         <h3>Flexible Layouts</h3>
         <p>Use percentages and fluid grids instead of fixed pixel sizes.</p>
       </div>
+
     </div>
   </section>
 
+  <!-- Comparison table section -->
   <section class="card">
     <h2>Concept Comparison</h2>
 
+    <!-- Table compares key responsive design concepts -->
     <table>
       <tr>
+        <!-- Table headers -->
         <th>Concept</th>
         <th>Description</th>
         <th>Why It Matters</th>
       </tr>
+
+      <!-- Row 1 -->
       <tr>
         <td>Responsive Design</td>
         <td>Adapts layout to screen size</td>
         <td>Improves user experience</td>
       </tr>
+
+      <!-- Row 2 -->
       <tr>
         <td>Media Queries</td>
         <td>Applies styles conditionally</td>
         <td>Supports device-specific layouts</td>
       </tr>
+
+      <!-- Row 3 -->
       <tr>
         <td>Flexible Layouts</td>
         <td>Uses fluid sizing</td>
@@ -89,6 +119,7 @@
 
 </main>
 
+<!-- Footer section -->
 <footer class="footer">
   <p>© 2026 Responsive Web Design Project</p>
 </footer>
