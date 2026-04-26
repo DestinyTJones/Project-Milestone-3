@@ -7,14 +7,63 @@
 </head>
 <body>
 
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="content1.html">Content 1</a></li>
+    <li><a href="content2.html">Content 2</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="references.html">References</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
 <div class="container">
-  <h1>Quiz</h1>
+  <h1>Responsive Design Quiz</h1>
 
   <form id="quizForm">
-    <label>What is responsive design?</label>
-    <input type="text" id="answer">
+
+    <label>1. What is responsive web design?</label>
+    <input type="text" id="q1">
+
+    <label>2. What are media queries used for?</label>
+    <input type="text" id="q2">
+
+    <label>3. Which approach starts with small screens first?</label>
+    <select id="q3">
+      <option value="">Select</option>
+      <option value="mobile">Mobile-first</option>
+      <option value="desktop">Desktop-first</option>
+    </select>
+
+    <label>4. What unit helps layouts scale (%, px, or fixed)?</label>
+    <input type="text" id="q4">
+
+    <label>5. What CSS feature changes layout based on screen size?</label>
+    <input type="text" id="q5">
+
+    <label>6. Why is responsive design important?</label>
+    <input type="text" id="q6">
+
+    <label>7. What does max-width: 100% do to images?</label>
+    <input type="text" id="q7">
+
+    <label>8. Which device typically has the smallest screen?</label>
+    <select id="q8">
+      <option value="">Select</option>
+      <option value="phone">Phone</option>
+      <option value="desktop">Desktop</option>
+    </select>
+
+    <label>9. What layout system is commonly used for responsiveness?</label>
+    <input type="text" id="q9">
+
+    <label>10. What is the purpose of flexible layouts?</label>
+    <input type="text" id="q10">
 
     <button type="button" onclick="checkAnswer()">Submit</button>
+
   </form>
 
   <p id="result"></p>
