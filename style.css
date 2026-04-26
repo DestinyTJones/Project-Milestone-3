@@ -1,11 +1,17 @@
-/* Reset */
+/* =========================
+   RESET STYLES
+   Removes default browser spacing
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base styles */
+/* =========================
+   BASE STYLES
+   General page styling
+========================= */
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f4f6f9;
@@ -14,18 +20,22 @@ body {
   margin: 0;
 }
 
-/* Navigation */
+/* =========================
+   NAVIGATION BAR
+========================= */
 nav {
   background: #111827;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
+/* Navigation layout (mobile-first: stacked vertically) */
 nav ul {
   list-style: none;
   display: flex;
   flex-direction: column;
 }
 
+/* Navigation links */
 nav ul li a {
   color: #e5e7eb;
   padding: 12px 15px;
@@ -35,37 +45,45 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
+/* Hover effect for links */
 nav ul li a:hover {
   background: #3b82f6;
   padding-left: 18px;
 }
 
-/* ⭐ HERO SECTION (FIXED) */
+/* =========================
+   HERO SECTION
+   Top banner with centered content
+========================= */
 .hero {
   text-align: center;
   padding: 60px 20px;
   background: linear-gradient(to right, #3b82f6, #2563eb);
   color: white;
 
-  /* center content vertically + horizontally */
+  /* Flexbox used to center content */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/* Hero heading */
 .hero h1 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: white; /* override global */
+  color: white; /* Overrides default heading color */
 }
 
+/* Hero text */
 .hero p {
   font-size: 18px;
   color: #e5e7eb;
 }
 
-/* Container */
+/* =========================
+   MAIN CONTENT CONTAINER
+========================= */
 .container {
   padding: 25px;
   margin: 20px;
@@ -74,7 +92,9 @@ nav ul li a:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
 }
 
-/* Headings */
+/* =========================
+   HEADINGS
+========================= */
 h1 {
   margin-bottom: 10px;
   color: #111827;
@@ -88,54 +108,68 @@ h2 {
   padding-left: 10px;
 }
 
-/* Paragraph spacing */
+/* =========================
+   TEXT & LISTS
+========================= */
 p {
   margin-bottom: 15px;
 }
 
-/* Lists */
+/* Unordered lists */
 ul {
   margin: 15px 0;
   padding-left: 20px;
 }
 
+/* List items */
 ul li {
   margin-bottom: 8px;
 }
 
-/* Tables */
+/* =========================
+   TABLE STYLES
+========================= */
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
+
+  /* Helps with responsiveness (horizontal scroll if needed) */
   overflow-x: auto;
 }
 
+/* Table cells */
 th, td {
   border: 1px solid #ddd;
   padding: 12px;
   text-align: left;
 }
 
+/* Table header */
 th {
   background: #3b82f6;
   color: white;
 }
 
+/* Zebra striping */
 tr:nth-child(even) {
   background: #f9f9f9;
 }
 
+/* Row hover effect */
 tr:hover {
   background: #eef6ff;
 }
 
-/* Forms (Quiz) */
+/* =========================
+   FORMS (QUIZ)
+========================= */
 form {
   display: flex;
   flex-direction: column;
 }
 
+/* Inputs, dropdowns, and buttons */
 input, select, button {
   padding: 10px;
   margin: 8px 0;
@@ -152,25 +186,35 @@ button {
   transition: 0.3s;
 }
 
+/* Button hover effect */
 button:hover {
   background: #2563eb;
 }
 
-/* Tablet */
+/* =========================
+   MEDIA QUERIES (RESPONSIVE DESIGN)
+========================= */
+
+/* Tablet layout */
 @media (min-width: 768px) {
+
+  /* Change nav to horizontal */
   nav ul {
     flex-direction: row;
     justify-content: center;
   }
 
+  /* Center container with max width */
   .container {
     margin: 30px auto;
     max-width: 850px;
   }
 }
 
-/* Desktop */
+/* Desktop layout */
 @media (min-width: 1024px) {
+
+  /* Wider layout for large screens */
   .container {
     max-width: 1000px;
   }
