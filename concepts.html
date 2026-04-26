@@ -2,74 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Concepts</title>
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="concepts.html">Concepts</a></li>
-    <li><a href="content1.html">Content 1</a></li>
-    <li><a href="content2.html">Content 2</a></li>
-    <li><a href="quiz.html">Quiz</a></li>
-    <li><a href="references.html">References</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
+<nav class="navbar">
+  <div class="nav-container">
+    <h2 class="logo">Web Design</h2>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="concepts.html" class="active">Concepts</a></li>
+      <li><a href="content1.html">Content 1</a></li>
+      <li><a href="content2.html">Content 2</a></li>
+      <li><a href="quiz.html">Quiz</a></li>
+      <li><a href="references.html">References</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="container">
-  <h1>Key Concepts</h1>
+<header class="hero">
+  <h1>Key Concepts of Responsive Design</h1>
+  <p>Understanding how modern websites adapt to different devices and screen sizes</p>
+</header>
 
-  <p>
-    Responsive web design is built on several important concepts that allow
-    websites to function effectively across different devices and screen sizes.
-    These concepts help improve usability, accessibility, and overall user experience.
-  </p>
+<main class="container">
 
-  <!-- NEW: Image with caption -->
-  <figure>
-    <img src="images/responsive-example.png" alt="Responsive Design Example">
-    <figcaption>Example of how a responsive layout adapts across devices</figcaption>
-  </figure>
+  <section class="card">
+    <h2>Overview</h2>
+    <p>
+      Responsive web design is built on key principles that allow websites to adapt to different
+      screen sizes and devices. These concepts improve usability, accessibility, and overall user experience.
+    </p>
+  </section>
 
-  <ul class="highlight-box">
-    <li><strong>Responsive Design:</strong> Allows layouts to adapt to different screen sizes.</li>
-    <li><strong>Media Queries:</strong> Apply different styles based on device width or conditions.</li>
-    <li><strong>Flexible Layouts:</strong> Use percentages or flexible units instead of fixed sizes.</li>
-  </ul>
+  <section class="card">
+    <h2>Example Layout</h2>
 
-  <h2>Concept Comparison Table</h2>
+    <figure>
+      <img src="images/responsive-example.png" alt="Responsive Design Example">
+      <figcaption>Example of how a layout adjusts across desktop, tablet, and mobile</figcaption>
+    </figure>
+  </section>
 
-  <table>
-    <tr>
-      <th>Concept</th>
-      <th>Description</th>
-      <th>Why It Matters</th>
-    </tr>
-    <tr>
-      <td>Responsive Design</td>
-      <td>Adapts layout to screen size</td>
-      <td>Improves user experience across devices</td>
-    </tr>
-    <tr>
-      <td>Media Queries</td>
-      <td>Applies styles based on screen width</td>
-      <td>Enables different layouts for mobile and desktop</td>
-    </tr>
-    <tr>
-      <td>Flexible Layouts</td>
-      <td>Uses fluid grids and percentages</td>
-      <td>Makes content scale properly</td>
-    </tr>
-  </table>
+  <section class="card">
+    <h2>Core Concepts</h2>
 
-  <p>
-    Together, these concepts ensure that modern websites are accessible and
-    visually appealing on phones, tablets, and desktop computers.
-  </p>
-</div>
+    <div class="grid">
+      <div class="feature">
+        <h3>Responsive Design</h3>
+        <p>Layouts automatically adjust to fit different screen sizes.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Media Queries</h3>
+        <p>Apply styles based on screen width, height, or device type.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Flexible Layouts</h3>
+        <p>Use percentages and fluid grids instead of fixed pixel sizes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Concept Comparison</h2>
+
+    <table>
+      <tr>
+        <th>Concept</th>
+        <th>Description</th>
+        <th>Why It Matters</th>
+      </tr>
+      <tr>
+        <td>Responsive Design</td>
+        <td>Adapts layout to screen size</td>
+        <td>Improves user experience</td>
+      </tr>
+      <tr>
+        <td>Media Queries</td>
+        <td>Applies styles conditionally</td>
+        <td>Supports device-specific layouts</td>
+      </tr>
+      <tr>
+        <td>Flexible Layouts</td>
+        <td>Uses fluid sizing</td>
+        <td>Ensures content scales properly</td>
+      </tr>
+    </table>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© 2026 Responsive Web Design Project</p>
+</footer>
 
 </body>
 </html>
