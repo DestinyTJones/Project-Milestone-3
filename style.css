@@ -1,52 +1,89 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f4f4f4;
+  background: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* Navigation */
+nav {
+  background: #1f2937;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
-  background: #333;
 }
 
 nav ul li a {
   color: white;
-  padding: 12px;
+  padding: 12px 15px;
   display: block;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 nav ul li a:hover {
-  background: #555;
+  background: #3b82f6;
+  padding-left: 20px;
 }
 
-/* Main container (card style) */
+/* Container (card style) */
 .container {
-  padding: 20px;
+  padding: 25px;
   margin: 20px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* Headings */
-h1, h2 {
-  color: #333;
+h1 {
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 5px;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 15px;
+}
+
+/* Lists */
+ul {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
 }
 
 /* Images */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
-  margin-top: 10px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
 /* Tables */
@@ -59,13 +96,14 @@ table {
 }
 
 th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
+  border: 1px solid #ddd;
+  padding: 12px;
   text-align: left;
 }
 
 th {
-  background: #eee;
+  background: #3b82f6;
+  color: white;
 }
 
 /* Forms (Quiz) */
@@ -78,17 +116,20 @@ input, select, button {
   padding: 10px;
   margin: 8px 0;
   font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
+/* Button styling */
 button {
-  background: #333;
+  background: #3b82f6;
   color: white;
   border: none;
-  cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #555;
+  background: #2563eb;
 }
 
 /* Tablet */
@@ -100,7 +141,7 @@ button:hover {
 
   .container {
     margin: 30px auto;
-    max-width: 800px;
+    max-width: 850px;
   }
 }
 
