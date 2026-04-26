@@ -1,65 +1,96 @@
 <!DOCTYPE html>
+<!-- Declares HTML5 document type -->
+
 <html lang="en">
+<!-- Sets page language to English -->
+
 <head>
 <meta charset="UTF-8">
+<!-- Ensures proper character encoding -->
+
 <title>Content 2</title>
+<!-- Title displayed in browser tab -->
+
 <link rel="stylesheet" href="style.css">
+<!-- Links external CSS stylesheet -->
 </head>
+
 <body>
 
-<!-- Full navigation (required on ALL pages) -->
+<!-- Navigation bar (consistent across all pages) -->
 <nav>
   <ul>
+    <!-- Navigation links -->
     <li><a href="index.html">Home</a></li>
     <li><a href="concepts.html">Concepts</a></li>
     <li><a href="content1.html">Content 1</a></li>
+    
+    <!-- Current page should ideally have 'active' class -->
     <li><a href="content2.html">Content 2</a></li>
+    
     <li><a href="quiz.html">Quiz</a></li>
     <li><a href="references.html">References</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
 </nav>
 
+<!-- Main content container -->
 <div class="container">
+
+  <!-- Page title -->
   <h1>Media Queries</h1>
 
+  <!-- Introduction paragraph -->
   <p>
     Media queries are a key feature of CSS that allow developers to apply
     different styles depending on the device’s screen size, resolution,
     or orientation. They are essential for creating responsive web designs.
   </p>
 
+  <!-- Explanation of importance -->
   <p>
     By using media queries, a website can change its layout to better fit
     mobile phones, tablets, and desktop screens. This improves usability
     and ensures content is displayed correctly on all devices.
   </p>
 
+  <!-- Section: How media queries work -->
   <h2>How Media Queries Work</h2>
+
+  <!-- List of key points -->
   <ul>
     <li>They use conditions based on screen width or height</li>
     <li>Common breakpoints include 768px (tablet) and 1024px (desktop)</li>
     <li>They allow layouts to change dynamically</li>
   </ul>
 
+  <!-- Section: Examples -->
   <h2>Example Media Queries</h2>
 
+  <!-- Table showing breakpoints and usage -->
   <table>
     <tr>
+      <!-- Table headers -->
       <th>Screen Size</th>
       <th>CSS Rule</th>
       <th>Purpose</th>
     </tr>
+
+    <!-- Mobile row -->
     <tr>
       <td>Mobile</td>
       <td>Default styles</td>
       <td>Applies base layout</td>
     </tr>
+
+    <!-- Tablet row -->
     <tr>
       <td>Tablet</td>
       <td>@media (min-width: 768px)</td>
       <td>Adjust layout for medium screens</td>
     </tr>
+
+    <!-- Desktop row -->
     <tr>
       <td>Desktop</td>
       <td>@media (min-width: 1024px)</td>
@@ -67,11 +98,13 @@
     </tr>
   </table>
 
+  <!-- Conclusion -->
   <p>
     Media queries make it possible to create flexible and adaptive designs,
     ensuring that websites look professional and function properly across
     all devices.
   </p>
+
 </div>
 
 </body>
