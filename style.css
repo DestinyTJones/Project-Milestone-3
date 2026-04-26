@@ -40,6 +40,23 @@ nav ul li a:hover {
   padding-left: 18px;
 }
 
+/* ⭐ HERO SECTION (THIS FIXES YOUR ALIGNMENT ISSUE) */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
 /* Container (card style) */
 .container {
   padding: 25px;
