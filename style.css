@@ -20,6 +20,11 @@ body {
   margin: 0;
 }
 
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
 /* =========================
    NAVIGATION BAR
 ========================= */
@@ -28,7 +33,7 @@ nav {
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* Navigation layout (mobile-first: stacked vertically) */
+/* Mobile-first: vertical navigation */
 nav ul {
   list-style: none;
   display: flex;
@@ -45,15 +50,20 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-/* Hover effect for links */
+/* Hover effect */
 nav ul li a:hover {
   background: #3b82f6;
   padding-left: 18px;
 }
 
+/* Active page highlight (important for navigation clarity) */
+nav ul li a.active {
+  background: #3b82f6;
+  font-weight: bold;
+}
+
 /* =========================
    HERO SECTION
-   Top banner with centered content
 ========================= */
 .hero {
   text-align: center;
@@ -61,7 +71,7 @@ nav ul li a:hover {
   background: linear-gradient(to right, #3b82f6, #2563eb);
   color: white;
 
-  /* Flexbox used to center content */
+  /* Flexbox centering */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +82,7 @@ nav ul li a:hover {
 .hero h1 {
   font-size: 36px;
   margin-bottom: 10px;
-  color: white; /* Overrides default heading color */
+  color: white;
 }
 
 /* Hero text */
@@ -127,15 +137,27 @@ ul li {
 }
 
 /* =========================
+   IMAGE RESPONSIVENESS
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* =========================
    TABLE STYLES
 ========================= */
+
+/* Wrap tables in a container for horizontal scrolling */
+.table-container {
+  overflow-x: auto;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
-
-  /* Helps with responsiveness (horizontal scroll if needed) */
-  overflow-x: auto;
 }
 
 /* Table cells */
@@ -145,7 +167,7 @@ th, td {
   text-align: left;
 }
 
-/* Table header */
+/* Header styling */
 th {
   background: #3b82f6;
   color: white;
@@ -156,7 +178,7 @@ tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-/* Row hover effect */
+/* Hover effect */
 tr:hover {
   background: #eef6ff;
 }
@@ -169,7 +191,7 @@ form {
   flex-direction: column;
 }
 
-/* Inputs, dropdowns, and buttons */
+/* Inputs and buttons */
 input, select, button {
   padding: 10px;
   margin: 8px 0;
@@ -178,43 +200,50 @@ input, select, button {
   border: 1px solid #ccc;
 }
 
+/* Input focus (accessibility improvement) */
+input:focus, select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
 /* Button styling */
 button {
   background: #3b82f6;
   color: white;
   border: none;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-/* Button hover effect */
+/* Button hover */
 button:hover {
   background: #2563eb;
 }
 
 /* =========================
-   MEDIA QUERIES (RESPONSIVE DESIGN)
+   MEDIA QUERIES
 ========================= */
 
-/* Tablet layout */
+/* Tablet */
 @media (min-width: 768px) {
 
-  /* Change nav to horizontal */
+  /* Horizontal navigation */
   nav ul {
     flex-direction: row;
     justify-content: center;
   }
 
-  /* Center container with max width */
+  /* Center content */
   .container {
     margin: 30px auto;
     max-width: 850px;
   }
 }
 
-/* Desktop layout */
+/* Desktop */
 @media (min-width: 1024px) {
 
-  /* Wider layout for large screens */
+  /* Wider layout */
   .container {
     max-width: 1000px;
   }
