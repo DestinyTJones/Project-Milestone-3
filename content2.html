@@ -7,15 +7,74 @@
 </head>
 <body>
 
+<!-- Full navigation (required on ALL pages) -->
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
+    <li><a href="concepts.html">Concepts</a></li>
+    <li><a href="content1.html">Content 1</a></li>
+    <li><a href="content2.html">Content 2</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="references.html">References</a></li>
+    <li><a href="about.html">About</a></li>
   </ul>
 </nav>
 
 <div class="container">
   <h1>Media Queries</h1>
-  <p>Used to apply styles based on screen size.</p>
+
+  <p>
+    Media queries are a key feature of CSS that allow developers to apply
+    different styles depending on the device’s screen size, resolution,
+    or orientation. They are essential for creating responsive web designs.
+  </p>
+
+  <p>
+    By using media queries, a website can change its layout to better fit
+    mobile phones, tablets, and desktop screens. This improves usability
+    and ensures content is displayed correctly on all devices.
+  </p>
+
+  <h2>How Media Queries Work</h2>
+  <ul>
+    <li>They use conditions based on screen width or height</li>
+    <li>Common breakpoints include 768px (tablet) and 1024px (desktop)</li>
+    <li>They allow layouts to change dynamically</li>
+  </ul>
+
+  <h2>Example Media Queries</h2>
+
+  <table>
+    <tr>
+      <th>Screen Size</th>
+      <th>CSS Rule</th>
+      <th>Purpose</th>
+    </tr>
+    <tr>
+      <td>Mobile</td>
+      <td>Default styles</td>
+      <td>Applies base layout</td>
+    </tr>
+    <tr>
+      <td>Tablet</td>
+      <td>@media (min-width: 768px)</td>
+      <td>Adjust layout for medium screens</td>
+    </tr>
+    <tr>
+      <td>Desktop</td>
+      <td>@media (min-width: 1024px)</td>
+      <td>Optimize layout for large screens</td>
+    </tr>
+  </table>
+
+  <p>
+    Media queries make it possible to create flexible and adaptive designs,
+    ensuring that websites look professional and function properly across
+    all devices.
+  </p>
+
+  <img src="https://via.placeholder.com/600" alt="Media Queries Example">
+
 </div>
 
 </body>
