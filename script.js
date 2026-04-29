@@ -53,9 +53,10 @@ function checkAnswer() {
   ) score++; else answers.q9.style.border = "2px solid red";
   if (answers.q10.value.toLowerCase().includes("adapt")) score++; else answers.q10.style.border = "2px solid red";
 
-  // Percentage + grade
+  // Percentage
   let percentage = (score / 10) * 100;
 
+  // Letter grade
   let letterGrade = "";
   if (percentage >= 90) letterGrade = "A";
   else if (percentage >= 80) letterGrade = "B";
@@ -63,7 +64,7 @@ function checkAnswer() {
   else if (percentage >= 60) letterGrade = "D";
   else letterGrade = "F";
 
-  // Message
+  // Result message
   let message = `You got ${score} out of 10 correct. (${percentage.toFixed(0)}%) - Grade: ${letterGrade}`;
 
   if (score === 10) message += " 🎉 Excellent!";
@@ -73,18 +74,45 @@ function checkAnswer() {
 
   document.getElementById("result").textContent = message;
 
-  // Show correct answers
-  let answerHTML = "<h3>Correct Answers:</h3><ul>";
+  // Show ONLY missed answers
+  let answerHTML = "<h3>Review (Missed Questions):</h3><ul>";
+  let missed = false;
 
-  for (let key in correct) {
-    answerHTML += `<li><strong>${key.toUpperCase()}:</strong> ${correct[key]}</li>`;
+  function checkMissed(questionKey, condition) {
+    if (!condition) {
+      missed = true;
+      answerHTML += `<li><strong>${questionKey.toUpperCase()}:</strong> ${correct[questionKey]}</li>`;
+    }
   }
+
+  checkMissed("q1", answers.q1.value.toLowerCase().includes("adapt"));
+  checkMissed("q2", answers.q2.value.toLowerCase().includes("screen"));
+  checkMissed("q3", answers.q3.value === "mobile");
+  checkMissed("q4", answers.q4.value.includes("%"));
+  checkMissed("q5", answers.q5.value.toLowerCase().includes("media"));
+  checkMissed("q6", answers.q6.value.toLowerCase().includes("user"));
+  checkMissed(
+    "q7",
+    answers.q7.value.toLowerCase().includes("scale") ||
+    answers.q7.value.toLowerCase().includes("fit")
+  );
+  checkMissed("q8", answers.q8.value === "phone");
+  checkMissed(
+    "q9",
+    answers.q9.value.toLowerCase().includes("flex") ||
+    answers.q9.value.toLowerCase().includes("grid")
+  );
+  checkMissed("q10", answers.q10.value.toLowerCase().includes("adapt"));
 
   answerHTML += "</ul>";
 
+  if (!missed) {
+    answerHTML = "<h3>Perfect score! No corrections needed 🎉</h3>";
+  }
+
   document.getElementById("answers").innerHTML = answerHTML;
 
-  // Disable submit / show retry
+  // Disable submit + show retry
   document.getElementById("submitBtn").disabled = true;
   document.getElementById("retryBtn").style.display = "inline-block";
 }
