@@ -1,10 +1,16 @@
-// Event listeners
+// EVENT LISTENERS
+// Runs functions when buttons are clicked
 document.getElementById("submitBtn").addEventListener("click", checkAnswer);
 document.getElementById("retryBtn").addEventListener("click", resetQuiz);
 
+// MAIN QUIZ FUNCTION
+// Checks answers, calculates score, and displays feedback
 function checkAnswer() {
+
+  // Initialize score counter
   let score = 0;
 
+  // Store all input elements for easy access
   const answers = {
     q1: document.getElementById("q1"),
     q2: document.getElementById("q2"),
@@ -18,7 +24,7 @@ function checkAnswer() {
     q10: document.getElementById("q10"),
   };
 
-  // Correct answers reference
+  // Correct answers used for feedback (only shown if incorrect)
   const correct = {
     q1: "Adapts to different screen sizes",
     q2: "Used for styling based on screen size",
@@ -32,31 +38,123 @@ function checkAnswer() {
     q10: "Adapts layout to different screens"
   };
 
-  // Reset styles
+  // CLEAN UP PREVIOUS ATTEMPT
+
+  // Removed previously displayed correct answers (if user retakes quiz)
+  document.querySelectorAll(".correct-answer").forEach(el => el.remove());
+
+  // Reset input borders
   Object.values(answers).forEach(el => el.style.border = "");
 
-  // Check answers + highlight wrong
-  if (answers.q1.value.toLowerCase().includes("adapt")) score++; else answers.q1.style.border = "2px solid red";
-  if (answers.q2.value.toLowerCase().includes("screen")) score++; else answers.q2.style.border = "2px solid red";
-  if (answers.q3.value === "mobile") score++; else answers.q3.style.border = "2px solid red";
-  if (answers.q4.value.includes("%")) score++; else answers.q4.style.border = "2px solid red";
-  if (answers.q5.value.toLowerCase().includes("media")) score++; else answers.q5.style.border = "2px solid red";
-  if (answers.q6.value.toLowerCase().includes("user")) score++; else answers.q6.style.border = "2px solid red";
+  // HELPER FUNCTION
+  // Displays correct answer under a question if it was wrong
+  function showCorrect(inputEl, text) {
+    const msg = document.createElement("div");
+    msg.className = "correct-answer";
+    msg.style.color = "red";
+    msg.style.fontSize = "0.9em";
+    msg.textContent = "Correct answer: " + text;
+
+    // Insert message directly under the input field
+    inputEl.parentNode.insertBefore(msg, inputEl.nextSibling);
+  }
+
+  // ANSWER CHECKING SECTION
+  // Each question is validated and incorrect ones are highlighted
+
+  // Question 1
+  if (answers.q1.value.toLowerCase().includes("adapt")) {
+    score++;
+  } else {
+    answers.q1.style.border = "2px solid red";
+    showCorrect(answers.q1, correct.q1);
+  }
+
+  // Question 2
+  if (answers.q2.value.toLowerCase().includes("screen")) {
+    score++;
+  } else {
+    answers.q2.style.border = "2px solid red";
+    showCorrect(answers.q2, correct.q2);
+  }
+
+  // Question 3
+  if (answers.q3.value === "mobile") {
+    score++;
+  } else {
+    answers.q3.style.border = "2px solid red";
+    showCorrect(answers.q3, correct.q3);
+  }
+
+  // Question 4
+  if (answers.q4.value.includes("%")) {
+    score++;
+  } else {
+    answers.q4.style.border = "2px solid red";
+    showCorrect(answers.q4, correct.q4);
+  }
+
+  // Question 5
+  if (answers.q5.value.toLowerCase().includes("media")) {
+    score++;
+  } else {
+    answers.q5.style.border = "2px solid red";
+    showCorrect(answers.q5, correct.q5);
+  }
+
+  // Question 6
+  if (answers.q6.value.toLowerCase().includes("user")) {
+    score++;
+  } else {
+    answers.q6.style.border = "2px solid red";
+    showCorrect(answers.q6, correct.q6);
+  }
+
+  // Question 7
   if (
     answers.q7.value.toLowerCase().includes("scale") ||
     answers.q7.value.toLowerCase().includes("fit")
-  ) score++; else answers.q7.style.border = "2px solid red";
-  if (answers.q8.value === "phone") score++; else answers.q8.style.border = "2px solid red";
+  ) {
+    score++;
+  } else {
+    answers.q7.style.border = "2px solid red";
+    showCorrect(answers.q7, correct.q7);
+  }
+
+  // Question 8
+  if (answers.q8.value === "phone") {
+    score++;
+  } else {
+    answers.q8.style.border = "2px solid red";
+    showCorrect(answers.q8, correct.q8);
+  }
+
+  // Question 9
   if (
     answers.q9.value.toLowerCase().includes("flex") ||
     answers.q9.value.toLowerCase().includes("grid")
-  ) score++; else answers.q9.style.border = "2px solid red";
-  if (answers.q10.value.toLowerCase().includes("adapt")) score++; else answers.q10.style.border = "2px solid red";
+  ) {
+    score++;
+  } else {
+    answers.q9.style.border = "2px solid red";
+    showCorrect(answers.q9, correct.q9);
+  }
 
-  // Percentage
+  // Question 10
+  if (answers.q10.value.toLowerCase().includes("adapt")) {
+    score++;
+  } else {
+    answers.q10.style.border = "2px solid red";
+    showCorrect(answers.q10, correct.q10);
+  }
+
+
+  // CALCULATE RESULTS
+
+  // Calculate percentage score
   let percentage = (score / 10) * 100;
 
-  // Letter grade
+  // Assign letter grade based on percentage
   let letterGrade = "";
   if (percentage >= 90) letterGrade = "A";
   else if (percentage >= 80) letterGrade = "B";
@@ -64,68 +162,48 @@ function checkAnswer() {
   else if (percentage >= 60) letterGrade = "D";
   else letterGrade = "F";
 
-  // Result message
+  // Build result message
   let message = `You got ${score} out of 10 correct. (${percentage.toFixed(0)}%) - Grade: ${letterGrade}`;
 
+  // Add feedback message based on performance
   if (score === 10) message += " 🎉 Excellent!";
   else if (score >= 7) message += " 👍 Good job!";
   else if (score >= 5) message += " ⚠️ Keep practicing.";
   else message += " ❌ Review the material and try again.";
 
+  // Display result to user
   document.getElementById("result").textContent = message;
 
-  // Show ONLY missed answers
-  let answerHTML = "<h3>Review (Missed Questions):</h3><ul>";
-  let missed = false;
 
-  function checkMissed(questionKey, condition) {
-    if (!condition) {
-      missed = true;
-      answerHTML += `<li><strong>${questionKey.toUpperCase()}:</strong> ${correct[questionKey]}</li>`;
-    }
-  }
-
-  checkMissed("q1", answers.q1.value.toLowerCase().includes("adapt"));
-  checkMissed("q2", answers.q2.value.toLowerCase().includes("screen"));
-  checkMissed("q3", answers.q3.value === "mobile");
-  checkMissed("q4", answers.q4.value.includes("%"));
-  checkMissed("q5", answers.q5.value.toLowerCase().includes("media"));
-  checkMissed("q6", answers.q6.value.toLowerCase().includes("user"));
-  checkMissed(
-    "q7",
-    answers.q7.value.toLowerCase().includes("scale") ||
-    answers.q7.value.toLowerCase().includes("fit")
-  );
-  checkMissed("q8", answers.q8.value === "phone");
-  checkMissed(
-    "q9",
-    answers.q9.value.toLowerCase().includes("flex") ||
-    answers.q9.value.toLowerCase().includes("grid")
-  );
-  checkMissed("q10", answers.q10.value.toLowerCase().includes("adapt"));
-
-  answerHTML += "</ul>";
-
-  if (!missed) {
-    answerHTML = "<h3>Perfect score! No corrections needed 🎉</h3>";
-  }
-
-  document.getElementById("answers").innerHTML = answerHTML;
-
-  // Disable submit + show retry
+  // FINAL UI UPDATES
+  // Disable submit button after submission
   document.getElementById("submitBtn").disabled = true;
+
+  // Show "Retake Quiz" button
   document.getElementById("retryBtn").style.display = "inline-block";
 }
 
-// Reset quiz
-function resetQuiz() {
-  document.getElementById("quizForm").reset();
-  document.getElementById("result").textContent = "";
-  document.getElementById("answers").innerHTML = "";
+// RESET FUNCTION
+// Clears inputs and resets UI for a new attempt
 
+function resetQuiz() {
+
+  // Reset form inputs
+  document.getElementById("quizForm").reset();
+
+  // Clear result message
+  document.getElementById("result").textContent = "";
+
+  // Remove displayed correct answers
+  document.querySelectorAll(".correct-answer").forEach(el => el.remove());
+
+  // Reset input borders
   const inputs = document.querySelectorAll("input, select");
   inputs.forEach(el => el.style.border = "");
 
+  // Re-enable submit button
   document.getElementById("submitBtn").disabled = false;
+
+  // Hide retake button again
   document.getElementById("retryBtn").style.display = "none";
 }
