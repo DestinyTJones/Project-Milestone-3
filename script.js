@@ -1,54 +1,91 @@
-// Function that runs when the user clicks the Submit button
-function checkAnswer() {
+// Attach event listeners when page loads
+document.getElementById("submitBtn").addEventListener("click", checkAnswer);
+document.getElementById("retryBtn").addEventListener("click", resetQuiz);
 
-  // Initialize score counter
+function checkAnswer() {
   let score = 0;
 
-  // Get user input values and convert text answers to lowercase for easier comparison
-  let q1 = document.getElementById("q1").value.toLowerCase();
-  let q2 = document.getElementById("q2").value.toLowerCase();
-  let q3 = document.getElementById("q3").value;
-  let q4 = document.getElementById("q4").value;
-  let q5 = document.getElementById("q5").value.toLowerCase();
-  let q6 = document.getElementById("q6").value.toLowerCase();
-  let q7 = document.getElementById("q7").value.toLowerCase();
-  let q8 = document.getElementById("q8").value;
-  let q9 = document.getElementById("q9").value.toLowerCase();
-  let q10 = document.getElementById("q10").value.toLowerCase();
+  const answers = {
+    q1: document.getElementById("q1"),
+    q2: document.getElementById("q2"),
+    q3: document.getElementById("q3"),
+    q4: document.getElementById("q4"),
+    q5: document.getElementById("q5"),
+    q6: document.getElementById("q6"),
+    q7: document.getElementById("q7"),
+    q8: document.getElementById("q8"),
+    q9: document.getElementById("q9"),
+    q10: document.getElementById("q10"),
+  };
 
-  // Check answers and increment score if correct
+  // Reset previous styles
+  Object.values(answers).forEach(el => el.style.border = "");
 
-  // Q1: Should mention adaptation to screen size
-  if (q1.includes("adapt")) score++;
+  // Check answers + highlight wrong ones
+  if (answers.q1.value.toLowerCase().includes("adapt")) score++; else answers.q1.style.border = "2px solid red";
+  if (answers.q2.value.toLowerCase().includes("screen")) score++; else answers.q2.style.border = "2px solid red";
+  if (answers.q3.value === "mobile") score++; else answers.q3.style.border = "2px solid red";
+  if (answers.q4.value.includes("%")) score++; else answers.q4.style.border = "2px solid red";
+  if (answers.q5.value.toLowerCase().includes("media")) score++; else answers.q5.style.border = "2px solid red";
+  if (answers.q6.value.toLowerCase().includes("user")) score++; else answers.q6.style.border = "2px solid red";
+  if (
+    answers.q7.value.toLowerCase().includes("scale") ||
+    answers.q7.value.toLowerCase().includes("fit")
+  ) score++; else answers.q7.style.border = "2px solid red";
+  if (answers.q8.value === "phone") score++; else answers.q8.style.border = "2px solid red";
+  if (
+    answers.q9.value.toLowerCase().includes("flex") ||
+    answers.q9.value.toLowerCase().includes("grid")
+  ) score++; else answers.q9.style.border = "2px solid red";
+  if (answers.q10.value.toLowerCase().includes("adapt")) score++; else answers.q10.style.border = "2px solid red";
 
-  // Q2: Should mention screen-based styling
-  if (q2.includes("screen")) score++;
+  // Calculate percentage
+  let percentage = (score / 10) * 100;
 
-  // Q3: Correct answer is "mobile"
-  if (q3 === "mobile") score++;
+  // Assign letter grade
+  let letterGrade = "";
+  if (percentage >= 90) {
+    letterGrade = "A";
+  } else if (percentage >= 80) {
+    letterGrade = "B";
+  } else if (percentage >= 70) {
+    letterGrade = "C";
+  } else if (percentage >= 60) {
+    letterGrade = "D";
+  } else {
+    letterGrade = "F";
+  }
 
-  // Q4: Should include percentage (%) for flexible layouts
-  if (q4.includes("%")) score++;
+  // Build result message
+  let message = `You got ${score} out of 10 correct. (${percentage.toFixed(0)}%) - Grade: ${letterGrade}`;
 
-  // Q5: Should mention media queries
-  if (q5.includes("media")) score++;
+  // Add feedback
+  if (score === 10) {
+    message += " 🎉 Excellent!";
+  } else if (score >= 7) {
+    message += " 👍 Good job!";
+  } else if (score >= 5) {
+    message += " ⚠️ Keep practicing.";
+  } else {
+    message += " ❌ Review the material and try again.";
+  }
 
-  // Q6: Should reference user experience or usability
-  if (q6.includes("user")) score++;
+  // Display result
+  document.getElementById("result").textContent = message;
 
-  // Q7: Should mention scaling or fitting images
-  if (q7.includes("scale") || q7.includes("fit")) score++;
+  // Disable submit button and show retry
+  document.getElementById("submitBtn").disabled = true;
+  document.getElementById("retryBtn").style.display = "inline-block";
+}
 
-  // Q8: Correct answer is "phone"
-  if (q8 === "phone") score++;
+// Reset quiz
+function resetQuiz() {
+  document.getElementById("quizForm").reset();
+  document.getElementById("result").textContent = "";
 
-  // Q9: Accepts either flexbox or grid
-  if (q9.includes("flex") || q9.includes("grid")) score++;
+  const inputs = document.querySelectorAll("input, select");
+  inputs.forEach(el => el.style.border = "");
 
-  // Q10: Should mention adapting to screens
-  if (q10.includes("adapt")) score++;
-
-  // Display the final score to the user
-  document.getElementById("result").textContent =
-    "You got " + score + " out of 10 correct.";
+  document.getElementById("submitBtn").disabled = false;
+  document.getElementById("retryBtn").style.display = "none";
 }
